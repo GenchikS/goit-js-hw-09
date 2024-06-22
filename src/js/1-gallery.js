@@ -67,7 +67,7 @@ const images = [
   ];
 
 import SimpleLightbox from "simplelightbox";
-console.log(SimpleLightbox)
+// console.log(SimpleLightbox)  //  перевірка підключення бібліотеки
 import "simplelightbox/dist/simple-lightbox.min.css";
 
 const gallery = document.querySelector(".gallery");
