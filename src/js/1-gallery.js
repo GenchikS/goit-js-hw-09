@@ -1,3 +1,5 @@
+
+
 const images = [
     {
       preview:
@@ -64,8 +66,28 @@ const images = [
     },
   ];
 
-
-// console.log(basicLightbox); 
+import SimpleLightbox from "simplelightbox";
+console.log(SimpleLightbox)
+import "simplelightbox/dist/simple-lightbox.min.css";
 
 const gallery = document.querySelector(".gallery");
-console.log("gallery", gallery);
+gallery.insertAdjacentHTML('beforeend', createGalleryPhoto(images));
+
+function createGalleryPhoto(arr) {
+    return arr.map(
+      ({preview, original, description}) => 
+    `<li class="gallery-item">
+            <a class="gallery-link" href="${original}">
+              <img
+                class="gallery-image"
+                src="${preview}"
+                alt="${description}"
+              />
+            </a>
+          </li>
+          `).join(``)
+};
+
+let userPhoto = new SimpleLightbox('.gallery a');
+ 
+ 
