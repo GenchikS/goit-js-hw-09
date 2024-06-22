@@ -11,6 +11,7 @@ li {
   list-style-type: none;
 }
 
+/* 1-Gallery */
 .gallery {
   display: flex;
   flex-direction: row;
@@ -22,4 +23,65 @@ li {
 .gallery-image {
   width: 360px;
   height: 200px;
+}
+
+/* 2-Form */
+
+.feedback-form{
+  display: flex;
+  flex-direction: column;
+  max-width: 408px;
+  height: 296px;
+  border-radius: 8px;
+  padding: 24px;
+  background: #ffffff;
+}
+
+.label-email {
+  font-family: Montserrat;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0.04em;
+  color: #2e2f42;
+  margin-bottom: 8px;
+}
+
+.label-massage{
+  font-family: Montserrat;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0.04em;
+  color: #2e2f42;
+  margin-bottom: 16px;
+}
+
+.input-email{
+  width: 360px;
+  height: 40px;
+  border: 1px solid #808080;
+  border-radius: 4px;
+}
+
+.input-massage{
+  width: 360px;
+  height: 80px;
+  border: 1px solid #808080;
+  border-radius: 4px;
+}
+
+.button-submit{
+  font-family: Montserrat;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0.04em;
+  color: #ffffff;
+  border-radius: 8px;
+  padding: 8px 16px;
+  width: 95px;
+  height: 40px;
+  background: #4e75ff;
+  cursor: pointer;
 }
