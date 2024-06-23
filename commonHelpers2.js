@@ -1,2 +1,2 @@
-import"./assets/styles-655e1abb.js";document.querySelector("section");
+import"./assets/styles-655e1abb.js";let e={email:"",message:""};const l=document.querySelector(".feedback-form");l.addEventListener("submit",o);function o(a){a.preventDefault();const{email:s,message:m}=a.currentTarget.elements;e.email=s.value,e.message=m.value,console.log("emailUser",e.email),console.log("messagelUser",e.message),e={email:e.email,message:e.message},console.log("formData",e)}
 //# sourceMappingURL=commonHelpers2.js.map
