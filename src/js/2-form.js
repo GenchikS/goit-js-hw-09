@@ -5,6 +5,11 @@ const dataOutput = JSON.parse(localStorage.getItem(LS_KEY)) ?? {};  //  отри
 
 const form = document.querySelector(".feedback-form");
 
+if (formData.email === "" && formData.message === "") {
+    document.querySelector(".input-email").value = dataOutput.email;
+    document.querySelector(".input-message").value = dataOutput.message
+    }
+
 form.addEventListener("submit", submitForm);
 form.addEventListener(`input`, inputEmail);
 
