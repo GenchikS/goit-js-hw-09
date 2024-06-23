@@ -7,65 +7,36 @@ let formData = { email: "", message: "" };
 
 
 const form = document.querySelector(".feedback-form");
-
-form.addEventListener("submit", inputForm);
-
-function inputForm(event) {
-    event.preventDefault();
-    const { email, message } = event.currentTarget.elements;
-    formData.email = email.value;
-    formData.message = message.value;
-    console.log(`emailUser`, formData.email);
-    console.log(`messagelUser`, formData.message);
-    formData = {
-        email: formData.email,
-        message: formData.message
-    };
-    console.log("formData", formData);
-}
-
-
-
 // const inputEmailUser = document.querySelector(".input-email");
 
-// inputEmailUser.addEventListener(`input`, inputEmail);
 
-// function inputEmail(event) {
-//     formData.email = event.currentTarget.value;
-//     localStorage.setItem(LS_KEY, JSON.stringify(formData))  //  створення ключа в LS email
+form.addEventListener("submit", submitForm);
+form.addEventListener(`input`, inputEmail);
+
+function inputEmail(event) {
+    const { email, message } = event.currentTarget.elements;
+    formData.email = (email.value).trim();
+    formData.message = (message.value).trim();
+    // console.log(`emailUser`, formData.email);  //  перевірка введення email
+    // console.log(`messagelUser`, formData.message);  //  перевірка введення message
+        formData = {
+            email: formData.email,
+            message: formData.message
+    };
+    localStorage.setItem(LS_KEY, JSON.stringify(formData))  //  створення ключа в LS};
+    // console.log("formData", formData);  //  перевірка об'єкту
+}
+
+function submitForm(event) {
+    event.preventDefault();
+    if (formData.email === "" || formData.message === "") {
+        alert(`Fill please all fields`);
+    } else {
+        console.log("formData", formData);  //  перевірка об'єкту
+        form.reset();  //  очищення форми
+        localStorage.clear();  //  очищення localStorage
+    };
     
-// }
 
-// const inputMassageUser = document.querySelector(".input-massage");
-// inputMassageUser.addEventListener(`input`, inputMassage);
-
-// function inputMassage(event) {
-//     formData.message = event.currentTarget.value;
-//     localStorage.setItem(LS_KEY, JSON.stringify(formData))  //  створення ключа в LS для message
-// }
-
-// const button = document.querySelector("button");
-// console.log(`button`,button)
-// button.addEventListener(`submit`, buttonSubmit);
-
-// function buttonSubmit() {
-//     console.log(`button`, button);
-//     // const dataInput = JSON.parse(localStorage.getItem(LS_KEY)) ?? {};
-//     // console.log(`dataInput`, dataInput);
-//     // if (event.currentTarget.value.trim() === "") {
-//     //     alert("Fill please all fields");
-//     // }
-//     const dataInput = JSON.parse(localStorage.getItem(LS_KEY)) ?? {};  //  отримання ключа
-//     console.log(`dataInput`, dataInput);  //  виведення ключа
-//     formData.clear();
-// }
-
-// const dataInput = JSON.parse(localStorage.getItem(LS_KEY)) ?? {};  //  отримання ключа
-// console.log(`dataInput`, dataInput);  //  виведення ключа
-
-
-
-
-
-
+}
 
