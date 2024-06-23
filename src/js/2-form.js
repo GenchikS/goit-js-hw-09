@@ -4,11 +4,16 @@ let formData = { email: "", message: "" };
 const dataOutput = JSON.parse(localStorage.getItem(LS_KEY)) ?? {};  //  отримання розпарсеного ключа
 
 const form = document.querySelector(".feedback-form");
+const inputEmailUser = document.querySelector(".input-email");
+const inputMessageUser = document.querySelector(".input-message");
+
 
 if (formData.email === "" && formData.message === "") {
-    document.querySelector(".input-email").value = dataOutput.email;
-    document.querySelector(".input-message").value = dataOutput.message
-    }
+    inputEmailUser.value = dataOutput.email ? formData.email = dataOutput.email : inputEmailUser.innerHTML = "";
+    inputMessageUser.value = dataOutput.message ? formData.message = dataOutput.message : inputMessageUser.innerHTML = "";
+}
+   
+
 
 form.addEventListener("submit", submitForm);
 form.addEventListener(`input`, inputEmail);
