@@ -1,10 +1,8 @@
 const LS_KEY = "feedback-form-state";
 let formData = { email: "", message: "" };
 
-// const dataInput = JSON.parse(localStorage.getItem(LS_KEY)) ?? {};  //  отримання ключа
-// console.log(`dataInput`, dataInput);  //  виведення ключа
+const dataOutput = JSON.parse(localStorage.getItem(LS_KEY)) ?? {};  //  отримання розпарсеного ключа
 
-const section = document.querySelector("section")
 const form = document.querySelector(".feedback-form");
 
 form.addEventListener("submit", submitForm);
@@ -21,7 +19,6 @@ function inputEmail(event) {
             message: formData.message
     };
     localStorage.setItem(LS_KEY, JSON.stringify(formData))  //  створення ключа в LS};
-    // console.log("formData", formData);  //  перевірка об'єкту
 }
 
 function submitForm(event) {
@@ -34,7 +31,6 @@ function submitForm(event) {
         localStorage.clear();  //  очищення localStorage
         formData = { email: "", message: "" };
     };
-    
-
 }
+
 
