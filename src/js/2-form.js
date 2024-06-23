@@ -1,14 +1,11 @@
 const LS_KEY = "feedback-form-state";
 let formData = { email: "", message: "" };
-// localStorage.setItem(LS_KEY, JSON.stringify(formData))  //  створення ключа в LS
 
 // const dataInput = JSON.parse(localStorage.getItem(LS_KEY)) ?? {};  //  отримання ключа
 // console.log(`dataInput`, dataInput);  //  виведення ключа
 
-
+const section = document.querySelector("section")
 const form = document.querySelector(".feedback-form");
-// const inputEmailUser = document.querySelector(".input-email");
-
 
 form.addEventListener("submit", submitForm);
 form.addEventListener(`input`, inputEmail);
@@ -35,6 +32,7 @@ function submitForm(event) {
         console.log("formData", formData);  //  перевірка об'єкту
         form.reset();  //  очищення форми
         localStorage.clear();  //  очищення localStorage
+        formData = { email: "", message: "" };
     };
     
 
