@@ -88,6 +88,12 @@ function createGalleryPhoto(arr) {
           `).join(``)
 };
 
-let userPhoto = new SimpleLightbox('.gallery a');
+let userPhoto = new SimpleLightbox('.gallery a', {
+    captions: true,
+    captionType: 'attr',
+    captionsData: 'alt',
+    captionPosition: 'bottom',
+    captionDelay: 250
+});
  
  
